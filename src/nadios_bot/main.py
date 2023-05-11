@@ -29,7 +29,7 @@ def setup():
 def main():
     logging.basicConfig(
         format='[%(levelname)-8s] %(asctime)s: %(message)s',
-        level=logging.DEBUG,
+        level=logging.INFO,
         datefmt='%Y-%m-%d %H:%M:%S',
         handlers=[
             RotatingFileHandler(LOG_FILE_PATH, maxBytes=1000000, backupCount=4),
