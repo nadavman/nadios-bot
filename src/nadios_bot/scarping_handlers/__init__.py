@@ -1,0 +1,1 @@
+from nadios_bot.scarping_handlers.handlers import HANDLERS

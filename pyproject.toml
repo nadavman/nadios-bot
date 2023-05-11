@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+  "setuptools>=65",
+  "wheel"
+]
+
+
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+include-package-data = true
+package-dir = { "" = "src" }
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+# exclude = ["tests"]
+namespaces = true
+
+
+[project]
+name = "nadios_bot"
+dynamic = ["version", "dependencies"]
+description = "a tiny package example w/setuptools"
+#authors = [{ name = "nadavman" }, { email = "a.a@gmail.com" }]
+#readme = "README.md"
+requires-python = ">=3.10"
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+version = {file = ["src/nadios_bot/VERSION"]}
+
+
+[project.scripts]
+start-nadios-bot = "nadios_bot:start_bot"
