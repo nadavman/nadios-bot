@@ -15,16 +15,16 @@ package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
-# exclude = ["tests"]
+exclude = ["tests"]
 namespaces = true
 
 
 [project]
 name = "nadios_bot"
 dynamic = ["version", "dependencies"]
-description = "a tiny package example w/setuptools"
-#authors = [{ name = "nadavman" }, { email = "a.a@gmail.com" }]
-#readme = "README.md"
+description = "package that contain my telegram bot."
+authors = [{ name = "nadavman" }]
+readme = "README.md"
 requires-python = ">=3.10"
 
 
