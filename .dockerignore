@@ -5,6 +5,7 @@
 **/*.bak
 **/*.pdf
 Dockerfile*
+docker-compose*
 radiance*
 tests
 data
@@ -133,7 +134,7 @@ tags
 **/.ropeproject
 
 # mkdocs documentation
-**//site
+src/nadios_bot/.env//site
 
 # mypy
 **/.mypy_cache/
@@ -200,3 +201,7 @@ tags
 **/Module.symvers
 **/Mkfile.old
 **/dkms.conf
+
+# Git files
+**/.git
+.gitignore
