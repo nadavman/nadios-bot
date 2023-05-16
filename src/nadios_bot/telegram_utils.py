@@ -160,8 +160,7 @@ def schedule_checker():
 
 
 def run_bot():
-    logging.info("Starting bot")
+    logging.info("Starting bot!")
     schedule.every(15).minutes.do(send_update_for_new_events)
     Thread(target=schedule_checker).start()
-    #bot.polling(none_stop=True, timeout=90)
-    bot.infinity_polling(timeout=10, long_polling_timeout=5)
+    bot.polling(none_stop=True, timeout=90)
