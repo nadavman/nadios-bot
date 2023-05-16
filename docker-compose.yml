@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  nadios_bot:
+    build: .
+    volumes:
+      - /var/log/nadios_bot:/var/log/nadios_bot
+      - /etc/nadios_bot:/etc/nadios_bot
+    env_file:
+      - .env
