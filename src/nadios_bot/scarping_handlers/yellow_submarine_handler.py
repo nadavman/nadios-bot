@@ -24,7 +24,7 @@ def parse_raw_event(raw_event: Tag) -> Event:
 
     return Event(name=event_name,
                  date=event_date,
-                 status=EventStatus.REGULAR,
+                 status=EventStatus.UNKNOWN,
                  url=event_url,
                  place=Places.YELLOW_SUBMARINE.value)
 

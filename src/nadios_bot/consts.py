@@ -22,11 +22,6 @@ class KeyboardNames(Enum):
     CLOSE = 'X Close'
 
 
-class StatusEmoji(Enum):
-    SHOCKED_FACE = "\U0001F630"
-    SMILING_FACE = "\U0001F604"
-
-
 # Files
 LOG_FILE_PATH = os.path.join("/", "var", "log", "nadios_bot", "bot.log")
 PREVIOUS_SHOWS_PATH = os.path.join(TELEGRAM_BOT_DATA_FOLDER, "previous_shows.json")
