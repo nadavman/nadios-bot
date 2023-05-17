@@ -1,12 +1,19 @@
-from nadios_bot.consts import StatusEmoji
 from datetime import datetime
 from enum import Enum
 
 
+class StatusEmoji(Enum):
+    SMILING_FACE = "\U0001F604"
+    SHOCKED_FACE = "\U0001F630"
+    X_MARK = "\U0000274C"
+    QUESTION_MARK = "\U00002753"
+
+
 class EventStatus(Enum):
-    REGULAR = "regular"
-    ALMOST_SOLDOUT = "almost soldout"
-    SOLDOUT = "soldout"
+    REGULAR = StatusEmoji.SMILING_FACE.value
+    ALMOST_SOLDOUT = StatusEmoji.SHOCKED_FACE.value
+    SOLDOUT = StatusEmoji.X_MARK.value
+    UNKNOWN = StatusEmoji.QUESTION_MARK.value
 
 
 class Event(object):
@@ -17,8 +24,8 @@ class Event(object):
         self.url = url
         self.place = place
 
-    def _get_emoji_info(self) -> str:
-        return StatusEmoji.SHOCKED_FACE.value if self.status == EventStatus.ALMOST_SOLDOUT else StatusEmoji.SMILING_FACE.value
+    def _get_emoji_status(self) -> str:
+        return self.status.value
 
     def _pretty_date(self) -> str:
         return self.date.strftime("%A %d/%m/%Y")
@@ -30,7 +37,7 @@ class Event(object):
         return f"{self.name} ({self._pretty_date()})"
 
     def menu_title(self) -> str:
-        return f"{self.name}  {self._get_emoji_info()}  ({self._pretty_date()})"
+        return f"{self.name}  {self._get_emoji_status()}  ({self._pretty_date()})"
 
     def long_title(self) -> str:
         return f"{self.menu_title()}\n{self.url}"
